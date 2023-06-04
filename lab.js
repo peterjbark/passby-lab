@@ -54,22 +54,35 @@ const savedLocation = personThree.location;
 moveLocation(personThree,personThreeNewLocation);
 console.log(personOne.location);
 
-
-// // 5. Aging 300 years + Cloning //
+// 5. Aging 300 years + Cloning // Would like to know another alternative to deep cloning besides using structuredClone()
 incrementAge(personOne,300);
 incrementAge(personTwo,300); 
 incrementAge(personThree,300);
-
-function clonePerson(original,copy){           
-    copy.location = original.location;
-    copy.name = original.name;
-    copy.age = 0;
-    console.log(copy);
-}
-const clone1 = {};
-clonePerson(personOne,clone1);
 const newNewLocation = {
     city: "Long Beach", state: "California", zip:91325
 }
+function clonePerson(original){ 
+    let clone = structuredClone(original);
+    clone.age = 0;
+    return clone;
+}
+let clone1 = clonePerson(personOne)
 moveLocation(clone1,newNewLocation);
+console.log(clone1);
 console.log(personOne);
+// 6. Hive Mind // 
+const thoughts = {
+    ideas: "hello I am the hivemind"
+}
+function uploadToHivemind(object){
+object.thoughts=thoughts;
+}
+uploadToHivemind(personOne);
+uploadToHivemind(personTwo);
+uploadToHivemind(personThree);
+uploadToHivemind(clone1);
+
+console.log(personOne.thoughts);
+console.log(personTwo.thoughts);
+console.log(personThree.thoughts);
+console.log(clone1.thoughts);
