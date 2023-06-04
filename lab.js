@@ -72,7 +72,7 @@ console.log(clone1);
 console.log(personOne);
 // 6. Hive Mind // 
 const thoughts = {
-    ideas: "hello I am the hivemind"
+    ideas: "Welcome to the hivemind."
 }
 function uploadToHivemind(object){
 object.thoughts=thoughts;
