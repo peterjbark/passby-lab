@@ -83,19 +83,19 @@ moveLocation(clone3,newNewLocation);
 console.log(clone3);
 console.log(personTwo);
 
-// // 6. Hive Mind // 
-// const thoughts = {
-//     ideas: "Welcome to the hivemind."
-// }
-// function uploadToHivemind(object){
-// object.thoughts=thoughts;
-// }
-// uploadToHivemind(personOne);
-// uploadToHivemind(personTwo);
-// uploadToHivemind(personThree);
-// uploadToHivemind(clone1);
+// 6. Hive Mind // 
+const thoughts = {
+    ideas: "Welcome to the hivemind."
+}
+function uploadToHivemind(object){
+object.thoughts=thoughts;
+}
+uploadToHivemind(personOne);
+uploadToHivemind(personTwo);
+uploadToHivemind(personThree);
+uploadToHivemind(clone1);
 
-// console.log(personOne.thoughts);
-// console.log(personTwo.thoughts);
-// console.log(personThree.thoughts);
-// console.log(clone1.thoughts);
+console.log(personOne.thoughts);
+console.log(personTwo.thoughts);
+console.log(personThree.thoughts);
+console.log(clone1.thoughts);
