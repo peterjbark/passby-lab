@@ -61,28 +61,41 @@ incrementAge(personThree,300);
 const newNewLocation = {
     city: "Long Beach", state: "California", zip:91325
 }
-function clonePerson(original){ 
-    let clone = structuredClone(original);
-    clone.age = 0;
-    return clone;
-}
-let clone1 = clonePerson(personOne)
-moveLocation(clone1,newNewLocation);
-console.log(clone1);
-console.log(personOne);
-// 6. Hive Mind // 
-const thoughts = {
-    ideas: "Welcome to the hivemind."
-}
-function uploadToHivemind(object){
-object.thoughts=thoughts;
-}
-uploadToHivemind(personOne);
-uploadToHivemind(personTwo);
-uploadToHivemind(personThree);
-uploadToHivemind(clone1);
 
-console.log(personOne.thoughts);
-console.log(personTwo.thoughts);
-console.log(personThree.thoughts);
-console.log(clone1.thoughts);
+function clonePerson(original) {
+    const newClone = {
+        name: {},
+        age: null,
+        location: {}
+    };
+    newClone.name.first = original.name.first;
+    newClone.name.last = original.name.last;
+    newClone.age = 0;
+    newClone.location.city = original.location.city;
+    newClone.location.state = original.location.state;
+    newClone.location.zip = original.location.zip;
+
+    return newClone;
+}
+
+const clone3 = clonePerson(personTwo);
+moveLocation(clone3,newNewLocation);
+console.log(clone3);
+console.log(personTwo);
+
+// // 6. Hive Mind // 
+// const thoughts = {
+//     ideas: "Welcome to the hivemind."
+// }
+// function uploadToHivemind(object){
+// object.thoughts=thoughts;
+// }
+// uploadToHivemind(personOne);
+// uploadToHivemind(personTwo);
+// uploadToHivemind(personThree);
+// uploadToHivemind(clone1);
+
+// console.log(personOne.thoughts);
+// console.log(personTwo.thoughts);
+// console.log(personThree.thoughts);
+// console.log(clone1.thoughts);
